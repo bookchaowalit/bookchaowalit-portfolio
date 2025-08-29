@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl';
 import { Suspense, lazy } from 'react';
 
 const HeroSection = lazy(() => import('@/components/lazy/hero-section').then(m => ({ default: m.HeroSection })));

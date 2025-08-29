@@ -6,7 +6,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "@/i18n/routing";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { useMDXComponents } from '../../../../../mdx-components';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -46,8 +45,6 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
   if (!post) {
     notFound();
   }
-
-  const components = useMDXComponents({});
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -112,7 +109,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
 
       {/* Article content */}
       <article className="prose prose-lg max-w-none">
-        <MDXRemote source={post.content} components={components} />
+        <MDXRemote source={post.content} />
       </article>
 
       <Separator className="my-12" />

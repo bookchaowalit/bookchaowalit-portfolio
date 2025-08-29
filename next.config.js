@@ -10,9 +10,7 @@ const nextConfig = {
   
   // Performance optimizations
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-avatar', '@radix-ui/react-dropdown-menu'],
-    bundlePagesRouterDependencies: true,
     esmExternals: true,
   },
   
