@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -10,24 +9,36 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
+import { LanguageSwitcher } from './language-switcher';
+import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-];
 
 export function Navigation() {
   const pathname = usePathname();
+  const t = useTranslations('nav');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const navItems = [
+    { name: t('home'), href: "/" },
+    { name: t('about'), href: "/about" },
+    { name: t('projects'), href: "/projects" },
+    { name: t('blog'), href: "/blog" },
+    { name: t('contact'), href: "/contact" },
+  ];
 
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-xl font-bold">
-            Portfolio
+            Chaowalit Greepoke
           </Link>
           
           <NavigationMenu className="hidden md:flex">
@@ -36,7 +47,7 @@ export function Navigation() {
                 <NavigationMenuItem key={item.href}>
                   <NavigationMenuLink asChild>
                     <Link
-                      href={item.href}
+                      href={item.href as any}
                       className={cn(
                         "px-3 py-2 text-sm font-medium transition-colors hover:text-primary",
                         pathname === item.href
@@ -52,11 +63,41 @@ export function Navigation() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Mobile menu button - you can add mobile menu logic here */}
-          <Button variant="outline" size="sm" className="md:hidden">
-            Menu
-          </Button>
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="md:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {!isMounted ? <Menu size={18} /> : (isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />)}
+            </Button>
+          </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {isMounted && isMobileMenuOpen && (
+          <div className="md:hidden border-t bg-background">
+            <div className="px-4 py-2 space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href as any}
+                  className={cn(
+                    "block px-3 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md",
+                    pathname === item.href
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:bg-muted"
+                  )}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

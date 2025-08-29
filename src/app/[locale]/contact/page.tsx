@@ -37,8 +37,8 @@ export default function Contact() {
       <div className="text-center space-y-4 mb-12">
         <h1 className="text-4xl font-bold">Get In Touch</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          I'm always interested in new opportunities, collaborations, and interesting projects.
-          Let's discuss how we can work together!
+          I'm always interested in new opportunities, AI projects, and innovative collaborations.
+          Based in Bangkok, Thailand. Let's discuss how we can work together!
         </p>
       </div>
 
@@ -125,7 +125,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-sm text-muted-foreground">your.email@example.com</p>
+                  <p className="text-sm text-muted-foreground">chaowalit.book@example.com</p>
                 </div>
               </div>
               
@@ -135,7 +135,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-sm text-muted-foreground">+66 (0)XX-XXX-XXXX</p>
                 </div>
               </div>
               
@@ -145,7 +145,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Location</p>
-                  <p className="text-sm text-muted-foreground">Your City, Country</p>
+                  <p className="text-sm text-muted-foreground">Bangkok Metropolitan Area, Thailand</p>
                 </div>
               </div>
             </CardContent>
@@ -161,28 +161,28 @@ export default function Contact() {
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <Button variant="outline" className="justify-start" asChild>
-                  <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/bookchaowalit" target="_blank" rel="noopener noreferrer">
                     <span className="mr-2">🐙</span>
                     GitHub
                   </a>
                 </Button>
                 
                 <Button variant="outline" className="justify-start" asChild>
-                  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                  <a href="https://linkedin.com/in/chaowalit-greepoke" target="_blank" rel="noopener noreferrer">
                     <span className="mr-2">💼</span>
                     LinkedIn
                   </a>
                 </Button>
                 
                 <Button variant="outline" className="justify-start" asChild>
-                  <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+                  <a href="https://twitter.com/bookchaowalit" target="_blank" rel="noopener noreferrer">
                     <span className="mr-2">🐦</span>
                     Twitter
                   </a>
                 </Button>
                 
                 <Button variant="outline" className="justify-start" asChild>
-                  <a href="https://dev.to/yourusername" target="_blank" rel="noopener noreferrer">
+                  <a href="https://dev.to/bookchaowalit" target="_blank" rel="noopener noreferrer">
                     <span className="mr-2">✍️</span>
                     Dev.to
                   </a>
@@ -198,24 +198,24 @@ export default function Contact() {
             <CardContent>
               <div className="space-y-3">
                 <div className="flex items-center space-x-2">
+                  <Badge variant="secondary">🤖</Badge>
+                  <span className="text-sm">AI integration & RAG systems</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Badge variant="secondary">📊</Badge>
+                  <span className="text-sm">SEO optimization & analytics</span>
+                </div>
+                <div className="flex items-center space-x-2">
                   <Badge variant="secondary">💻</Badge>
-                  <span className="text-sm">Full-stack web development</span>
+                  <span className="text-sm">Full-stack development</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Badge variant="secondary">🎨</Badge>
-                  <span className="text-sm">UI/UX design consultation</span>
+                  <Badge variant="secondary">🛍️</Badge>
+                  <span className="text-sm">Shopify e-commerce solutions</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Badge variant="secondary">🚀</Badge>
-                  <span className="text-sm">Project architecture & planning</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Badge variant="secondary">🔧</Badge>
-                  <span className="text-sm">Code reviews & optimization</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Badge variant="secondary">📚</Badge>
-                  <span className="text-sm">Mentoring & code tutorials</span>
+                  <Badge variant="secondary">📈</Badge>
+                  <span className="text-sm">Data analysis & social media insights</span>
                 </div>
               </div>
             </CardContent>
@@ -227,8 +227,8 @@ export default function Contact() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                I typically respond to messages within 24-48 hours. For urgent matters,
-                please mention it in the subject line and I'll prioritize your message.
+                I typically respond to messages within 24-48 hours (Bangkok timezone UTC+7).
+                For urgent AI or development projects, please mention it in the subject line.
               </p>
               
               <Separator className="my-4" />
@@ -239,7 +239,7 @@ export default function Contact() {
                   <Badge variant="outline">24-48 hours</Badge>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm">Project discussions</span>
+                  <span className="text-sm">AI/Development projects</span>
                   <Badge variant="outline">Same day</Badge>
                 </div>
                 <div className="flex justify-between items-center">

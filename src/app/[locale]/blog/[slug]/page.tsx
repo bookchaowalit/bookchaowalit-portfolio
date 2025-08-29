@@ -3,15 +3,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { useMDXComponents } from '../../../../mdx-components';
+import { useMDXComponents } from '../../../../../mdx-components';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for all blog posts
@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for each post
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.slug);
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   
   if (!post) {
     return {
@@ -33,13 +34,14 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   return {
-    title: `${post.title} | Your Name - Portfolio`,
+    title: `${post.title} | Chaowalit Greepoke - Portfolio`,
     description: post.excerpt,
   };
 }
 
-export default function BlogPost({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.slug);
+export default async function BlogPost({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
 
   if (!post) {
     notFound();
@@ -82,8 +84,8 @@ export default function BlogPost({ params }: BlogPostPageProps) {
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center space-x-4">
             <Avatar>
-              <AvatarImage src="/profile.jpg" alt={post.author} />
-              <AvatarFallback>YN</AvatarFallback>
+              <AvatarImage src="/profile.webp" alt={post.author} />
+              <AvatarFallback>CG</AvatarFallback>
             </Avatar>
             <div>
               <p className="font-medium">{post.author}</p>
@@ -119,14 +121,14 @@ export default function BlogPost({ params }: BlogPostPageProps) {
       <section className="bg-muted/50 rounded-lg p-8">
         <div className="flex items-start space-x-4">
           <Avatar className="w-16 h-16">
-            <AvatarImage src="/profile.jpg" alt={post.author} />
-            <AvatarFallback className="text-lg">YN</AvatarFallback>
+            <AvatarImage src="/profile.webp" alt={post.author} />
+            <AvatarFallback className="text-lg">CG</AvatarFallback>
           </Avatar>
           <div className="flex-1">
             <h3 className="text-lg font-semibold mb-2">About {post.author}</h3>
             <p className="text-muted-foreground mb-4">
-              Passionate full-stack developer with expertise in React, Next.js, and modern web technologies. 
-              I love sharing knowledge and helping developers build better applications.
+              Tech Generalist from Bangkok, Thailand with expertise in AI integration, full-stack development, and SEO optimization. 
+              I love sharing knowledge and helping developers build innovative solutions with modern technologies.
             </p>
             <div className="flex space-x-2">
               <Button variant="outline" size="sm" asChild>

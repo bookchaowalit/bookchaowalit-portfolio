@@ -9,14 +9,14 @@ export default function About() {
       {/* Hero Section */}
       <div className="text-center space-y-6 py-8">
         <Avatar className="w-32 h-32 mx-auto">
-          <AvatarImage src="/profile.jpg" alt="Profile" />
-          <AvatarFallback className="text-3xl">YN</AvatarFallback>
+          <AvatarImage src="/profile.webp" alt="Profile" />
+          <AvatarFallback className="text-3xl">CG</AvatarFallback>
         </Avatar>
         <div>
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Passionate full-stack developer with X years of experience building
-            modern web applications and solving complex problems.
+            Tech Generalist with 3+ years of experience in full-stack development,
+            AI integration, and SEO optimization. Based in Bangkok, Thailand.
           </p>
         </div>
       </div>
@@ -29,15 +29,17 @@ export default function About() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-muted-foreground">
-              I started my journey in web development X years ago and have been
-              passionate about creating digital solutions ever since. My background
-              in [Your Background] has given me a unique perspective on problem-solving
-              and user experience design.
+              Hello, I'm Book—a Tech Generalist specializing in website development,
+              AI development, and SEO with strong website analysis skills. I have
+              experience working with Shopify, React.js, Next.js, and utilizing tools
+              like Google Analytics to analyze websites and extract insights that help
+              clients' sites grow and reach a wider audience.
             </p>
             <p className="text-muted-foreground">
-              When I'm not coding, you can find me [Your Hobbies/Interests].
-              I believe that diverse experiences make me a better developer and
-              help me approach problems from different angles.
+              Additionally, I have expertise in analyzing data from various social media
+              platforms to optimize marketing strategies for greater effectiveness. My
+              background in electronics and data center operations has given me a unique
+              perspective on both hardware and software solutions.
             </p>
           </CardContent>
         </Card>
@@ -56,7 +58,7 @@ export default function About() {
               <div className="flex flex-wrap gap-2">
                 {[
                   "React", "Next.js", "TypeScript", "JavaScript",
-                  "Tailwind CSS", "HTML5", "CSS3", "Sass"
+                  "Tailwind CSS", "HTML5", "CSS3", "Shopify Liquid"
                 ].map((skill) => (
                   <Badge key={skill} variant="secondary">
                     {skill}
@@ -71,8 +73,8 @@ export default function About() {
               <h4 className="font-semibold mb-3">Backend</h4>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Node.js", "Python", "Express.js", "FastAPI",
-                  "PostgreSQL", "MongoDB", "Redis", "REST APIs", "GraphQL"
+                  "FastAPI", "Python", "PostgreSQL", "LlamaIndex",
+                  "LangChain", "RAG", "Multi-agent Systems", "REST APIs", "AI Integration"
                 ].map((skill) => (
                   <Badge key={skill} variant="secondary">
                     {skill}
@@ -87,8 +89,8 @@ export default function About() {
               <h4 className="font-semibold mb-3">Tools & Technologies</h4>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Git", "Docker", "AWS", "Vercel", "Jest",
-                  "Cypress", "Figma", "VS Code"
+                  "Google Analytics", "Facebook API", "SEO", "Git",
+                  "Data Analysis", "Social Media Analytics", "A/B Testing", "ETL"
                 ].map((skill) => (
                   <Badge key={skill} variant="secondary">
                     {skill}
@@ -107,33 +109,46 @@ export default function About() {
           <CardContent className="space-y-6">
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold">Senior Full Stack Developer</h4>
-                <p className="text-sm text-muted-foreground">Company Name • 2022 - Present</p>
+                <h4 className="font-semibold">Full-stack Developer</h4>
+                <p className="text-sm text-muted-foreground">Turfmapp • Jan 2024 - May 2025</p>
                 <p className="text-sm mt-2">
-                  Lead development of modern web applications using React, Next.js, and Node.js.
-                  Collaborated with cross-functional teams to deliver high-quality software solutions.
+                  Integrated AI solutions using RAG with LlamaIndex and LangChain, implementing
+                  multi-agent systems with ReAct method. Developed front-end with Next.js and
+                  back-end with FastAPI. Created analytics tools using Facebook Graph API.
                 </p>
               </div>
               
               <Separator />
               
               <div>
-                <h4 className="font-semibold">Full Stack Developer</h4>
-                <p className="text-sm text-muted-foreground">Previous Company • 2020 - 2022</p>
+                <h4 className="font-semibold">SEO Specialist & Data Analyst</h4>
+                <p className="text-sm text-muted-foreground">Turfmapp • May 2022 - Jan 2024</p>
                 <p className="text-sm mt-2">
-                  Developed and maintained web applications, implemented new features,
-                  and improved application performance.
+                  Conducted SEO research to optimize website performance, drove improved search
+                  rankings and organic traffic. Analyzed social media data for strategic marketing
+                  decisions using A/B testing and experimental approaches.
                 </p>
               </div>
               
               <Separator />
               
               <div>
-                <h4 className="font-semibold">Junior Developer</h4>
-                <p className="text-sm text-muted-foreground">First Company • 2019 - 2020</p>
+                <h4 className="font-semibold">Data Center Technician</h4>
+                <p className="text-sm text-muted-foreground">JasTel Network Co. Ltd. • May 2021 - Apr 2022</p>
                 <p className="text-sm mt-2">
-                  Started my professional journey building responsive websites
-                  and learning modern development practices.
+                  Connected servers to cables and fiber optic lines, monitored and maintained
+                  data center operations to ensure optimal performance and uptime.
+                </p>
+              </div>
+              
+              <Separator />
+              
+              <div>
+                <h4 className="font-semibold">Technical Staff (Apprenticeship)</h4>
+                <p className="text-sm text-muted-foreground">True Corporation • Oct 2020 - Feb 2021</p>
+                <p className="text-sm mt-2">
+                  Serviced customers to troubleshoot internet problems, including router changes,
+                  fiber optic repairs, and cable splicing using fusion splicers.
                 </p>
               </div>
             </div>
@@ -147,18 +162,19 @@ export default function About() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <h4 className="font-semibold">Degree in [Your Degree]</h4>
-              <p className="text-sm text-muted-foreground">University Name • Year</p>
+              <h4 className="font-semibold">High Vocational Certificate in Electronics</h4>
+              <p className="text-sm text-muted-foreground">Chitralada Technology Institute</p>
             </div>
             
             <Separator />
             
             <div>
-              <h4 className="font-semibold">Relevant Certifications</h4>
+              <h4 className="font-semibold">Certifications</h4>
               <ul className="text-sm text-muted-foreground mt-2 space-y-1">
-                <li>• AWS Certified Developer</li>
+                <li>• Secure BigLake Data Skill Badge - Google (Mar 2025)</li>
                 <li>• Google Analytics Certified</li>
-                <li>• [Other Relevant Certifications]</li>
+                <li>• Facebook Graph API Integration</li>
+                <li>• ETL and Data Pipeline Management</li>
               </ul>
             </div>
           </CardContent>
@@ -172,11 +188,12 @@ export default function About() {
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 text-muted-foreground">
-              <li>🎵 I love listening to music while coding</li>
-              <li>☕ Coffee enthusiast - can't start the day without it</li>
-              <li>📚 Always reading tech blogs and staying updated with latest trends</li>
-              <li>🌱 Enjoy learning new technologies and experimenting with side projects</li>
-              <li>🎮 Gaming in my free time helps me relax and think creatively</li>
+              <li>🤖 Passionate about AI research and implementing cutting-edge AI models</li>
+              <li>📊 Love analyzing data patterns and extracting meaningful insights</li>
+              <li>🌐 Always exploring new web technologies and development frameworks</li>
+              <li>🛠️ Enjoy building automated systems and data pipelines</li>
+              <li>🇹🇭 Based in Bangkok, Thailand - embracing the vibrant tech scene</li>
+              <li>💡 Born August 22, 2000 - Gen Z perspective on technology and innovation</li>
             </ul>
           </CardContent>
         </Card>
