@@ -48,6 +48,7 @@ export function Navigation() {
                   <NavigationMenuLink asChild>
                     <Link
                       href={item.href as any}
+                      prefetch={true}
                       className={cn(
                         "px-3 py-2 text-sm font-medium transition-colors hover:text-primary",
                         pathname === item.href
@@ -84,6 +85,7 @@ export function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href as any}
+                  prefetch={true}
                   className={cn(
                     "block px-3 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md",
                     pathname === item.href
