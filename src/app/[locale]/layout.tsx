@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Kalam, Caveat, Amatic_SC } from "next/font/google";
 import "../globals.css";
 import { Navigation } from "@/components/navigation";
 import { PageTransition } from "@/components/page-transition";
+import { FloatingDoodles } from "@/components/ui/floating-doodles";
+import { Footer } from "@/components/footer";
 import { Analytics } from '@vercel/analytics/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -17,6 +19,24 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const kalam = Kalam({
+  variable: "--font-kalam",
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const amaticSC = Amatic_SC({
+  variable: "--font-amatic",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -48,15 +68,17 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} ${caveat.variable} ${amaticSC.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
+          <FloatingDoodles />
           <Navigation />
-          <main className="min-h-screen">
+          <main className="min-h-screen relative z-10">
             <PageTransition>
               {children}
             </PageTransition>
           </main>
+          <Footer />
           <Analytics />
         </NextIntlClientProvider>
       </body>

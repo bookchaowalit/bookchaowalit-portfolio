@@ -1,9 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { getAllBlogPosts, getFeaturedPosts } from "@/lib/blog";
+import { BlogHero, BlogSearchBar, BlogNewsletter, NotebookSection } from "@/components/blog-client-wrapper";
 
 export default function Blog() {
   const allPosts = getAllBlogPosts();
@@ -12,28 +12,17 @@ export default function Blog() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="text-center space-y-4 mb-12">
-        <h1 className="text-4xl font-bold">Blog</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Thoughts on web development, technology, and everything in between.
-        </p>
-      </div>
+      <BlogHero />
 
       {/* Search Bar */}
-      <div className="max-w-md mx-auto mb-12">
-        <Input
-          type="text"
-          placeholder="Search articles..."
-          className="w-full"
-        />
-      </div>
+      <BlogSearchBar />
 
       {/* Featured Posts */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-8 flex items-center gap-2">
-          Featured Articles
-          <Badge variant="secondary">Editor's Pick</Badge>
-        </h2>
+      <NotebookSection 
+        title="Featured Articles" 
+        subtitle="My best writing - handpicked just for you!"
+        className="mb-16"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {featuredPosts.map((post) => (
             <Card key={post.slug} className="hover:shadow-lg transition-shadow h-full flex flex-col">
@@ -67,11 +56,13 @@ export default function Blog() {
             </Card>
           ))}
         </div>
-      </section>
+      </NotebookSection>
 
       {/* Recent Posts */}
-      <section>
-        <h2 className="text-2xl font-bold mb-8">Recent Articles</h2>
+      <NotebookSection 
+        title="Recent Articles" 
+        subtitle="Fresh thoughts and new discoveries"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {recentPosts.map((post) => (
             <Card key={post.slug} className="hover:shadow-lg transition-shadow h-full flex flex-col">
@@ -107,24 +98,10 @@ export default function Blog() {
             </Card>
           ))}
         </div>
-      </section>
+      </NotebookSection>
 
       {/* Newsletter Signup */}
-      <section className="mt-16 py-12 bg-muted/50 rounded-lg text-center">
-        <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
-        <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-          Subscribe to my newsletter to get the latest articles and updates
-          delivered straight to your inbox.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1"
-          />
-          <Button>Subscribe</Button>
-        </div>
-      </section>
+      <BlogNewsletter />
     </div>
   );
 }

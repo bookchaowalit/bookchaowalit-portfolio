@@ -1,105 +1,185 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
+import { MixedTypographyTitle, NotebookSectionHeader, StudyGuideBox } from "@/components/ui/mixed-typography";
+import { NotebookPaper, StickyNote, HandDrawnHighlight } from "@/components/ui/notebook-elements";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       {/* Hero Section */}
-      <div className="text-center space-y-6 py-8">
-        <Avatar className="w-32 h-32 mx-auto">
-          <AvatarImage src="/profile.webp" alt="Profile" />
-          <AvatarFallback className="text-3xl">CG</AvatarFallback>
-        </Avatar>
-        <div>
-          <h1 className="text-4xl font-bold mb-4">About Me</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Tech Generalist with 3+ years of experience in full-stack development,
-            AI integration, and SEO optimization. Based in Bangkok, Thailand.
-          </p>
-        </div>
-      </div>
+      <motion.div 
+        className="text-center space-y-8 py-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
+        >
+          <Avatar className="w-32 h-32 mx-auto">
+            <AvatarImage src="/profile.webp" alt="Profile" />
+            <AvatarFallback className="text-3xl">CG</AvatarFallback>
+          </Avatar>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <MixedTypographyTitle 
+            words={[
+              { text: "About", style: "cursive", color: "text-purple-700", size: "xl" },
+              { text: "Me", style: "bubble", color: "text-blue-600", size: "xl" },
+              { text: "👨‍💻", style: "block", size: "lg" }
+            ]}
+            className="mb-6"
+          />
+        </motion.div>
+        
+        <motion.div
+          className="max-w-lg mx-auto"
+          initial={{ opacity: 0, scale: 0.9, rotate: -1 }}
+          animate={{ opacity: 1, scale: 1, rotate: 1 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "backOut" }}
+        >
+          <StickyNote color="green" rotation={1} className="text-center">
+            <p className="text-sm text-slate-800">
+              <HandDrawnHighlight color="yellow">
+                Tech Generalist
+              </HandDrawnHighlight>
+              {" "}with 3+ years of experience in{" "}
+              <HandDrawnHighlight color="blue">
+                full-stack development, AI integration
+              </HandDrawnHighlight>
+              {" "}and{" "}
+              <HandDrawnHighlight color="pink">
+                SEO optimization
+              </HandDrawnHighlight>
+              {" "}from Bangkok 🇹🇭
+            </p>
+          </StickyNote>
+        </motion.div>
+      </motion.div>
 
       <div className="space-y-12">
         {/* Bio Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle>My Story</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-muted-foreground">
-              Hello, I'm Book—a Tech Generalist specializing in website development,
-              AI development, and SEO with strong website analysis skills. I have
-              experience working with Shopify, React.js, Next.js, and utilizing tools
-              like Google Analytics to analyze websites and extract insights that help
-              clients' sites grow and reach a wider audience.
-            </p>
-            <p className="text-muted-foreground">
-              Additionally, I have expertise in analyzing data from various social media
-              platforms to optimize marketing strategies for greater effectiveness. My
-              background in electronics and data center operations has given me a unique
-              perspective on both hardware and software solutions.
-            </p>
-          </CardContent>
-        </Card>
+        <NotebookPaper className="py-8">
+          <NotebookSectionHeader 
+            title="My Story" 
+            subtitle="How I became a tech generalist"
+            className="mb-6"
+          />
+          <div className="space-y-6">
+            <StudyGuideBox title="Background" type="note">
+              <p className="text-slate-800 leading-relaxed">
+                Hello, I'm <HandDrawnHighlight color="yellow">Book</HandDrawnHighlight>—a Tech Generalist specializing in website development,
+                AI development, and SEO with strong website analysis skills. I have
+                experience working with <HandDrawnHighlight color="green">Shopify, React.js, Next.js</HandDrawnHighlight>, and utilizing tools
+                like <HandDrawnHighlight color="blue">Google Analytics</HandDrawnHighlight> to analyze websites and extract insights that help
+                clients' sites grow and reach a wider audience.
+              </p>
+            </StudyGuideBox>
+            
+            <StudyGuideBox title="Expertise" type="tip">
+              <p className="text-slate-800 leading-relaxed">
+                Additionally, I have expertise in <HandDrawnHighlight color="pink">analyzing data from various social media
+                platforms</HandDrawnHighlight> to optimize marketing strategies for greater effectiveness. My
+                background in <HandDrawnHighlight color="green">electronics and data center operations</HandDrawnHighlight> has given me a unique
+                perspective on both hardware and software solutions.
+              </p>
+            </StudyGuideBox>
+          </div>
+        </NotebookPaper>
 
         {/* Skills Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Technical Skills</CardTitle>
-            <CardDescription>
-              Technologies and tools I work with regularly
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div>
-              <h4 className="font-semibold mb-3">Frontend</h4>
+        <NotebookPaper className="py-8">
+          <NotebookSectionHeader 
+            title="Technical Skills" 
+            subtitle="Technologies and tools I work with regularly"
+            className="mb-6"
+          />
+          <div className="space-y-6">
+            <StudyGuideBox title="Frontend Technologies" type="tip">
               <div className="flex flex-wrap gap-2">
                 {[
                   "React", "Next.js", "TypeScript", "JavaScript",
                   "Tailwind CSS", "HTML5", "CSS3", "Shopify Liquid"
-                ].map((skill) => (
-                  <Badge key={skill} variant="secondary">
-                    {skill}
-                  </Badge>
+                ].map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Badge 
+                      variant="secondary" 
+                      className="font-[family-name:var(--font-doodle)] border border-green-300"
+                      style={{ transform: `rotate(${(index % 2 === 0 ? 1 : -1) * 0.5}deg)` }}
+                    >
+                      {skill}
+                    </Badge>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </StudyGuideBox>
             
-            <Separator />
-            
-            <div>
-              <h4 className="font-semibold mb-3">Backend</h4>
+            <StudyGuideBox title="Backend & AI" type="note">
               <div className="flex flex-wrap gap-2">
                 {[
                   "FastAPI", "Python", "PostgreSQL", "LlamaIndex",
                   "LangChain", "RAG", "Multi-agent Systems", "REST APIs", "AI Integration"
-                ].map((skill) => (
-                  <Badge key={skill} variant="secondary">
-                    {skill}
-                  </Badge>
+                ].map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 + index * 0.05 }}
+                  >
+                    <Badge 
+                      variant="secondary" 
+                      className="font-[family-name:var(--font-doodle)] border border-blue-300"
+                      style={{ transform: `rotate(${(index % 2 === 0 ? -1 : 1) * 0.5}deg)` }}
+                    >
+                      {skill}
+                    </Badge>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </StudyGuideBox>
             
-            <Separator />
-            
-            <div>
-              <h4 className="font-semibold mb-3">Tools & Technologies</h4>
+            <StudyGuideBox title="Tools & Analytics" type="important">
               <div className="flex flex-wrap gap-2">
                 {[
                   "Google Analytics", "Facebook API", "SEO", "Git",
                   "Data Analysis", "Social Media Analytics", "A/B Testing", "ETL"
-                ].map((skill) => (
-                  <Badge key={skill} variant="secondary">
-                    {skill}
-                  </Badge>
+                ].map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.6 + index * 0.05 }}
+                  >
+                    <Badge 
+                      variant="secondary" 
+                      className="font-[family-name:var(--font-doodle)] border border-red-300"
+                      style={{ transform: `rotate(${(index % 2 === 0 ? 1 : -1) * 0.3}deg)` }}
+                    >
+                      {skill}
+                    </Badge>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </StudyGuideBox>
+          </div>
+        </NotebookPaper>
 
         {/* Experience Section */}
         <Card>

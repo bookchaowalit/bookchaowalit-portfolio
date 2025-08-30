@@ -11,19 +11,16 @@ import {
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
 import { LanguageSwitcher } from './language-switcher';
+import { NavigationBrand } from './navigation-brand';
 import { Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 export function Navigation() {
   const pathname = usePathname();
   const t = useTranslations('nav');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const navItems = [
     { name: t('home'), href: "/" },
@@ -34,12 +31,10 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+    <nav className="border-b bg-gradient-to-r from-background/95 via-background/95 to-background/95 backdrop-blur supports-[backdrop-filter]:from-background/85 supports-[backdrop-filter]:via-primary/5 supports-[backdrop-filter]:to-background/85 sticky top-0 z-50 border-b-primary/10">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
-            Chaowalit Greepoke
-          </Link>
+          <NavigationBrand />
           
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="flex space-x-4">
@@ -72,13 +67,13 @@ export function Navigation() {
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {!isMounted ? <Menu size={18} /> : (isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />)}
+              {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </Button>
           </div>
         </div>
         
         {/* Mobile Menu */}
-        {isMounted && isMobileMenuOpen && (
+        {isMobileMenuOpen && (
           <div className="md:hidden border-t bg-background">
             <div className="px-4 py-2 space-y-1">
               {navItems.map((item) => (

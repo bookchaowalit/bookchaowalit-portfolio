@@ -7,6 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { MixedTypographyTitle } from "@/components/ui/mixed-typography";
+import { NotebookPaper, SketchyFrame } from "@/components/ui/notebook-elements";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function Contact() {
@@ -34,24 +37,58 @@ export default function Contact() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <div className="text-center space-y-4 mb-12">
-        <h1 className="text-4xl font-bold">Get In Touch</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          I'm always interested in new opportunities, AI projects, and innovative collaborations.
-          Based in Bangkok, Thailand. Let's discuss how we can work together!
-        </p>
-      </div>
+      <motion.div 
+        className="text-center space-y-8 mb-12"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <MixedTypographyTitle 
+            words={[
+              { text: "Let's", style: "cursive", color: "text-purple-700", size: "xl" },
+              { text: "Connect!", style: "bubble", color: "text-blue-600", size: "xl" },
+              { text: "🚀", style: "block", size: "lg" }
+            ]}
+            className="mb-6"
+          />
+        </motion.div>
+        
+        <motion.div
+          className="max-w-lg mx-auto"
+          initial={{ opacity: 0, scale: 0.9, rotate: -1 }}
+          animate={{ opacity: 1, scale: 1, rotate: 1 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "backOut" }}
+        >
+          <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+            <p className="text-slate-700 text-center leading-relaxed">
+              Always interested in <strong>new opportunities</strong>, <strong>AI projects</strong>, and innovative collaborations from <strong>Bangkok, Thailand</strong>! 🇹🇭
+            </p>
+          </div>
+        </motion.div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Form */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Send Me a Message</CardTitle>
-            <CardDescription>
-              Fill out the form below and I'll get back to you as soon as possible.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+        <SketchyFrame variant="dashed">
+          <NotebookPaper className="p-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <h3 className="text-xl font-[family-name:var(--font-script)] font-bold text-slate-800 mb-2">
+                Send Me a Message! ✍️
+              </h3>
+              <p className="text-sm text-slate-600 font-[family-name:var(--font-doodle)] mb-6">
+                Fill out the form below and I'll get back to you ASAP!
+              </p>
+            </motion.div>
+            <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
@@ -109,8 +146,9 @@ export default function Contact() {
                 Send Message
               </Button>
             </form>
-          </CardContent>
-        </Card>
+            </div>
+          </NotebookPaper>
+        </SketchyFrame>
 
         {/* Contact Info */}
         <div className="space-y-6">
