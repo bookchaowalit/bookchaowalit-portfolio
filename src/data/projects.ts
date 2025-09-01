@@ -7,7 +7,8 @@ export const projects = [
     demoUrl: "https://demo-ecommerce.com",
     githubUrl: "https://github.com/yourusername/ecommerce-platform",
     imageUrl: "/project-1.jpg",
-    featured: true
+    featured: true,
+    highlights: []
   },
   {
     title: "Task Management App",
@@ -17,7 +18,8 @@ export const projects = [
     demoUrl: "https://demo-taskmanager.com",
     githubUrl: "https://github.com/yourusername/task-manager",
     imageUrl: "/project-2.jpg",
-    featured: true
+    featured: true,
+    highlights: []
   },
   {
     title: "Weather Dashboard",
@@ -27,7 +29,8 @@ export const projects = [
     demoUrl: "https://demo-weather.com",
     githubUrl: "https://github.com/yourusername/weather-dashboard",
     imageUrl: "/project-3.jpg",
-    featured: true
+    featured: true,
+    highlights: []
   },
   {
     title: "Portfolio Website",
@@ -37,7 +40,8 @@ export const projects = [
     demoUrl: "https://your-portfolio.com",
     githubUrl: "https://github.com/yourusername/portfolio",
     imageUrl: "/project-4.jpg",
-    featured: false
+    featured: false,
+    highlights: []
   },
   {
     title: "Social Media Analytics",
@@ -47,7 +51,8 @@ export const projects = [
     demoUrl: "https://demo-analytics.com",
     githubUrl: "https://github.com/yourusername/social-analytics",
     imageUrl: "/project-5.jpg",
-    featured: false
+    featured: false,
+    highlights: []
   },
   {
     title: "Recipe Sharing App",
@@ -57,6 +62,7 @@ export const projects = [
     demoUrl: "https://demo-recipes.com",
     githubUrl: "https://github.com/yourusername/recipe-app",
     imageUrl: "/project-6.jpg",
-    featured: false
+    featured: false,
+    highlights: []
   }
 ];

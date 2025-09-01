@@ -13,6 +13,7 @@ export interface BlogPost {
   readTime: string
   tags: string[]
   featured: boolean
+  image?: string;
 }
 
 const blogDirectory = path.join(process.cwd(), 'content/blog')
@@ -41,6 +42,7 @@ export function getAllBlogPosts(): BlogPost[] {
         readTime: text,
         tags: data.tags || [],
         featured: data.featured || false,
+        image: data.image
       } as BlogPost
     })
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
@@ -65,6 +67,7 @@ export function getBlogPost(slug: string): BlogPost | null {
       readTime: text,
       tags: data.tags || [],
       featured: data.featured || false,
+      image: data.image
     }
   } catch {
     return null

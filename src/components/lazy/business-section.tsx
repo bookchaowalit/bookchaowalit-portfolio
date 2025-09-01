@@ -73,7 +73,7 @@ export function BusinessSection() {
             whileHover={{ y: -5, scale: 1.02 }}
             className="h-full"
           >
-            <SketchyFrame variant="single">
+            <SketchyFrame variant="dashed">
               <NotebookPaper className="p-5 h-full">
                 <div className="flex flex-col h-full space-y-3">
                   <div className="flex items-center justify-between">
