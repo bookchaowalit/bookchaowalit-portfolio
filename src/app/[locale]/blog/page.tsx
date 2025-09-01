@@ -15,12 +15,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const seoTitles = {
     en: "Tech Blog - Chaowalit Greepoke | Web Development, AI Integration & SEO Insights",
-    th: "บล็อกเทคโนโลยี - เชวลิต กรีโภค | การพัฒนาเว็บ, การรวม AI และความเข้าใจเกี่ยวกับ SEO"
+    th: "บล็อกเทคโนโลยี - เชาวลิต กรีโภค | การพัฒนาเว็บ, การรวม AI และความเข้าใจเกี่ยวกับ SEO"
   };
 
   const seoDescriptions = {
     en: "Read the latest insights on web development, AI integration, SEO optimization, and tech trends from Chaowalit Greepoke. Expert perspectives on Next.js, React, Python, and modern web technologies from Bangkok.",
-    th: "อ่านความเข้าใจล่าสุดเกี่ยวกับการพัฒนาเว็บ, การรวม AI, การเพิ่มประสิทธิภาพ SEO และเทรนด์เทคโนโลยีจากเชวลิต กรีโภค มุมมองผู้เชี่ยวชาญเกี่ยวกับ Next.js, React, Python และเทคโนโลยีเว็บทันสมัยจากกรุงเทพฯ"
+    th: "อ่านความเข้าใจล่าสุดเกี่ยวกับการพัฒนาเว็บ, การรวม AI, การเพิ่มประสิทธิภาพ SEO และเทรนด์เทคโนโลยีจากเชาวลิต กรีโภค มุมมองผู้เชี่ยวชาญเกี่ยวกับ Next.js, React, Python และเทคโนโลยีเว็บทันสมัยจากกรุงเทพฯ"
   };
 
   return {

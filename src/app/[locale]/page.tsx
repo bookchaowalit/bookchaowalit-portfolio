@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const seoTitles = {
     en: "Chaowalit Greepoke - Full-Stack Developer & AI Specialist | Tech Generalist Bangkok",
-    th: "เชวลิต กรีโภค - นักพัฒนา Full-Stack และผู้เชี่ยวชาญด้าน AI | Tech Generalist กรุงเทพฯ"
+    th: "เชาวลิต กรีโภค - นักพัฒนา Full-Stack และผู้เชี่ยวชาญด้าน AI | Tech Generalist กรุงเทพฯ"
   };
 
   const seoDescriptions = {

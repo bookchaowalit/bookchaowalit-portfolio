@@ -10,12 +10,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const seoTitles = {
     en: "About Chaowalit Greepoke - Tech Generalist & Full-Stack Developer from Bangkok",
-    th: "เกี่ยวกับเชวลิต กรีโภค - Tech Generalist และ Full-Stack Developer จากกรุงเทพฯ"
+    th: "เกี่ยวกับเชาวลิต กรีโภค - Tech Generalist และ Full-Stack Developer จากกรุงเทพฯ"
   };
 
   const seoDescriptions = {
     en: "Meet Chaowalit Greepoke, a Tech Generalist with 3+ years experience in full-stack development, AI integration, and SEO optimization. From Bangkok, Thailand, specializing in Next.js, React, Python, and data analytics solutions.",
-    th: "ทำความรู้จักเชวลิต กรีโภค Tech Generalist ที่มีประสบการณ์ 3+ ปีในด้าน full-stack development, การรวม AI และการเพิ่มประสิทธิภาพ SEO จากกรุงเทพฯ เชี่ยวชาญ Next.js, React, Python และโซลูชันการวิเคราะห์ข้อมูล"
+    th: "ทำความรู้จักเชาวลิต กรีโภค Tech Generalist ที่มีประสบการณ์ 3+ ปีในด้าน full-stack development, การรวม AI และการเพิ่มประสิทธิภาพ SEO จากกรุงเทพฯ เชี่ยวชาญ Next.js, React, Python และโซลูชันการวิเคราะห์ข้อมูล"
   };
 
   return {

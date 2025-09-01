@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const seoTitles = {
     en: "Projects Portfolio - Chaowalit Greepoke | Full-Stack & AI Development Showcase",
-    th: "ผลงานโครงการ - เชวลิต กรีโภค | แสดงผลงาน Full-Stack และ AI Development"
+    th: "ผลงานโครงการ - เชาวลิต กรีโภค | แสดงผลงาน Full-Stack และ AI Development"
   };
 
   const seoDescriptions = {
