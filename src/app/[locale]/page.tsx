@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const seoDescriptions = {
     en: "Expert Full-Stack Developer & AI Specialist from Bangkok, Thailand. Specialized in Next.js, React, AI integration, SEO optimization, and data analytics. 3+ years creating innovative web solutions that drive business growth.",
-    th: "ผู้เชี่ยวชาญด้าน Full-Stack Development และ AI จากกรุงเทพฯ เชี่ยวชาญ Next.js, React, การรวม AI, การเพิ่มประสิทธิภาพ SEO และการวิเคราะห์ข้อมูล ประสบการณ์ 3+ ปีในการสร้างโซลูชันเว็บนวัตกรรม"
+    th: "เชาวลิต กรีโภค - ผู้เชี่ยวชาญด้าน Full-Stack Development และ AI จากกรุงเทพฯ เชี่ยวชาญ Next.js, React, การรวม AI, การเพิ่มประสิทธิภาพ SEO และการวิเคราะห์ข้อมูล ประสบการณ์ 3+ ปีในการสร้างโซลูชันเว็บนวัตกรรม"
   };
 
   return {

@@ -10,12 +10,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const seoTitles = {
     en: "Projects Portfolio - Chaowalit Greepoke | Full-Stack & AI Development Showcase",
-    th: "ผลงานโครงการ - เชวลิต กรีโปก | แสดงผลงาน Full-Stack และ AI Development"
+    th: "ผลงานโครงการ - เชวลิต กรีโภค | แสดงผลงาน Full-Stack และ AI Development"
   };
 
   const seoDescriptions = {
     en: "Explore Chaowalit's portfolio of full-stack web applications, AI integration projects, and data analytics solutions. Built with Next.js, React, Python FastAPI, and modern technologies. Bangkok-based developer.",
-    th: "สำรวจผลงานของเชวลิตในด้านการพัฒนาเว็บแอปพลิเคชัน full-stack, โครงการรวม AI และโซลูชันการวิเคราะห์ข้อมูล พัฒนาด้วย Next.js, React, Python FastAPI และเทคโนโลยีทันสมัย นักพัฒนาจากกรุงเทพฯ"
+    th: "สำรวจผลงานของ เชาวลิต กรีโภค ในด้านการพัฒนาเว็บแอปพลิเคชัน full-stack, โครงการรวม AI และโซลูชันการวิเคราะห์ข้อมูล พัฒนาด้วย Next.js, React, Python FastAPI และเทคโนโลยีทันสมัย นักพัฒนาจากกรุงเทพฯ"
   };
 
   return {

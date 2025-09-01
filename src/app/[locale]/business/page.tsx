@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   const seoDescriptions = {
     en: "Discover the businesses and ventures I've built as a solopreneur. From tech solutions to innovative services, explore my entrepreneurial journey in Bangkok, Thailand.",
-    th: "ค้นพบธุรกิจและกิจการที่ผมสร้างขึ้นในฐานะ solopreneur จากโซลูชันเทคโนโลยีไปจนถึงบริการที่นวัตกรรม สำรวจการเดินทางการเป็นผู้ประกอบการของผมในกรุงเทพฯ ประเทศไทย"
+    th: "ค้นพบธุรกิจและกิจการที่ เชาวลิต กรีโภค สร้างขึ้นในฐานะ solopreneur จากโซลูชันเทคโนโลยีไปจนถึงบริการที่นวัตกรรม สำรวจการเดินทางการเป็นผู้ประกอบการของผมในกรุงเทพฯ ประเทศไทย"
   };
   
   return {

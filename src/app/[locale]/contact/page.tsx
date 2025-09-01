@@ -10,12 +10,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const seoTitles = {
     en: "Contact Chaowalit Greepoke - Get in Touch for AI & Full-Stack Development Projects",
-    th: "ติดต่อเชวลิต กรีโปก - ติดต่อสำหรับโครงการ AI และ Full-Stack Development"
+    th: "ติดต่อเชวลิต กรีโภค - ติดต่อสำหรับโครงการ AI และ Full-Stack Development"
   };
 
   const seoDescriptions = {
     en: "Ready to collaborate on your next project? Contact Chaowalit Greepoke, Bangkok-based Tech Generalist specializing in AI integration, full-stack development, and SEO optimization. Quick response within 24-48 hours.",
-    th: "พร้อมที่จะร่วมงานในโครงการต่อไปของคุณหรือยัง? ติดต่อเชวลิต กรีโปก Tech Generalist จากกรุงเทพฯ ที่เชี่ยวชาญด้านการรวม AI, การพัฒนา full-stack และการเพิ่มประสิทธิภาพ SEO ตอบกลับอย่างรวดเร็วภายใน 24-48 ชั่วโมง"
+    th: "พร้อมที่จะร่วมงานในโครงการต่อไปของคุณหรือยัง? ติดต่อเชวลิต กรีโภค Tech Generalist จากกรุงเทพฯ ที่เชี่ยวชาญด้านการรวม AI, การพัฒนา full-stack และการเพิ่มประสิทธิภาพ SEO ตอบกลับอย่างรวดเร็วภายใน 24-48 ชั่วโมง"
   };
 
   return {
