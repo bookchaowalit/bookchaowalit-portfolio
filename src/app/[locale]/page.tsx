@@ -79,7 +79,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-8 space-y-20">
+    <div className="container mx-auto px-4 py-8 space-y-16 md:space-y-20 lg:space-y-24">
       <HeroSection />
       <SkillsSection />
       <AboutSection />
