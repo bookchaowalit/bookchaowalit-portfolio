@@ -40,7 +40,7 @@ export function Footer() {
             </motion.svg>
           </motion.div>
 
-          {/* Simple navigation with doodle style */}
+          {/* Navigation with doodle style */}
           <motion.nav 
             className="flex flex-wrap justify-center gap-6 mb-8"
             initial={{ opacity: 0, y: 20 }}
@@ -76,6 +76,15 @@ export function Footer() {
             </motion.div>
             <motion.div whileHover={{ y: -2, scale: 1.05 }}>
               <Link 
+                href="/business"
+                className="text-slate-700 hover:text-primary font-[family-name:var(--font-doodle)] text-lg transition-colors duration-200"
+                style={{ transform: `rotate(-0.8deg)` }}
+              >
+                Business
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -2, scale: 1.05 }}>
+              <Link 
                 href="/blog"
                 className="text-slate-700 hover:text-primary font-[family-name:var(--font-doodle)] text-lg transition-colors duration-200"
                 style={{ transform: `rotate(-1deg)` }}
@@ -93,6 +102,73 @@ export function Footer() {
               </Link>
             </motion.div>
           </motion.nav>
+
+          {/* Social Media Links */}
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <motion.a 
+              href="https://github.com/bookchaowalit" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ y: -2, scale: 1.1 }}
+              className="text-slate-600 hover:text-primary transition-colors duration-200"
+              title="GitHub"
+            >
+              🐙
+            </motion.a>
+            <motion.a 
+              href="https://linkedin.com/in/chaowalit-greepoke" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ y: -2, scale: 1.1 }}
+              className="text-slate-600 hover:text-primary transition-colors duration-200"
+              title="LinkedIn"
+            >
+              💼
+            </motion.a>
+            <motion.a 
+              href="https://twitter.com/bookchaowalit" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ y: -2, scale: 1.1 }}
+              className="text-slate-600 hover:text-primary transition-colors duration-200"
+              title="Twitter"
+            >
+              🐦
+            </motion.a>
+            <motion.a 
+              href="https://www.upwork.com/freelancers/bookchaowalit" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ y: -2, scale: 1.1 }}
+              className="text-slate-600 hover:text-primary transition-colors duration-200"
+              title="Upwork"
+            >
+              🔧
+            </motion.a>
+            <motion.a 
+              href="https://www.freelancer.com/u/bookchaowalit" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ y: -2, scale: 1.1 }}
+              className="text-slate-600 hover:text-primary transition-colors duration-200"
+              title="Freelancer"
+            >
+              💪
+            </motion.a>
+            <motion.a 
+              href="mailto:bookchaowalit@gmail.com"
+              whileHover={{ y: -2, scale: 1.1 }}
+              className="text-slate-600 hover:text-primary transition-colors duration-200"
+              title="Email"
+            >
+              📧
+            </motion.a>
+          </motion.div>
 
           {/* Hand-drawn doodle symbols */}
           <motion.div 
@@ -164,10 +240,13 @@ export function Footer() {
             className="text-center"
           >
             <p className="text-sm text-slate-600 font-[family-name:var(--font-doodle)]">
-              © {currentYear} Chaowalit Greepoke
+              © {currentYear} Book (เชาวลิต กรีโภค)
             </p>
             <p className="text-xs text-slate-500 mt-1">
-              Made with ❤️ in Bangkok
+              Made with ❤️ in Bangkok, Thailand 🇹🇭
+            </p>
+            <p className="text-xs text-slate-500 mt-1">
+              Solopreneur • Full-Stack Developer • AI Specialist
             </p>
           </motion.div>
         </div>

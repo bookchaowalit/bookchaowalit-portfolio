@@ -3,12 +3,13 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "business": "Business",
     "blog": "Blog",
     "contact": "Contact"
   },
   "home": {
     "greeting": "Hello, I'm",
-    "name": "Chaowalit",
+    "name": "Book (เชาวลิต กรีโภค)",
     "subtitle": "Tech Generalist specializing in Full-stack Development, AI Integration, and SEO. Creating innovative web solutions and data-driven insights from Bangkok, Thailand",
     "viewWork": "View My Work",
     "getInTouch": "Get In Touch",
@@ -25,7 +26,7 @@
     "title": "About Me",
     "subtitle": "Tech Generalist with 3+ years of experience in full-stack development, AI integration, and SEO optimization. Based in Bangkok, Thailand.",
     "myStoryTitle": "My Story",
-    "myStoryContent1": "Hello, I'm Book—a Tech Generalist specializing in website development, AI development, and SEO with strong website analysis skills. I have experience working with Shopify, React.js, Next.js, and utilizing tools like Google Analytics to analyze websites and extract insights that help clients' sites grow and reach a wider audience.",
+    "myStoryContent1": "Hello, I'm Book (เชาวลิต กรีโภค)—a Tech Generalist specializing in website development, AI development, and SEO with strong website analysis skills. I have experience working with Shopify, React.js, Next.js, and utilizing tools like Google Analytics to analyze websites and extract insights that help clients' sites grow and reach a wider audience.",
     "myStoryContent2": "Additionally, I have expertise in analyzing data from various social media platforms to optimize marketing strategies for greater effectiveness. My background in electronics and data center operations has given me a unique perspective on both hardware and software solutions.",
     "technicalSkillsTitle": "Technical Skills",
     "technicalSkillsDescription": "Technologies and tools I work with regularly",
@@ -49,6 +50,15 @@
     "code": "Code",
     "interestedTitle": "Interested in Working Together?",
     "interestedDescription": "I'm always excited to work on new projects and collaborate with other developers. Let's discuss how we can bring your ideas to life!"
+  },
+  "business": {
+    "title": "My Businesses",
+    "subtitle": "As a solopreneur, I'm passionate about building multiple ventures that solve real problems and create value.",
+    "heroTitle": "Solopreneur Journey",
+    "heroDescription": "Building innovative solutions across multiple industries with passion and dedication.",
+    "socialMedia": "Social Media",
+    "website": "Website",
+    "learnMore": "Learn More"
   },
   "blog": {
     "title": "Blog",

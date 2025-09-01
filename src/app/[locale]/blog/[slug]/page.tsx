@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -6,10 +7,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "@/i18n/routing";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { getTranslations } from 'next-intl/server';
 
 interface BlogPostPageProps {
   params: Promise<{
     slug: string;
+    locale: string;
   }>;
 }
 
@@ -22,19 +25,75 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each post
-export async function generateMetadata({ params }: BlogPostPageProps) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug, locale } = await params;
   const post = getBlogPost(slug);
   
   if (!post) {
     return {
       title: 'Post Not Found',
+      robots: 'noindex, nofollow'
     };
   }
 
+  const baseTitle = `${post.title} | Chaowalit Greepoke`;
+  const blogUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://chaowalitgreepoke.com'}/${locale === 'en' ? '' : locale + '/'}blog/${slug}`;
+
   return {
-    title: `${post.title} | Chaowalit Greepoke - Portfolio`,
+    title: baseTitle,
     description: post.excerpt,
+    keywords: [
+      ...post.tags,
+      'Chaowalit Greepoke Blog',
+      'Tech Tutorial Bangkok',
+      'Web Development Article',
+      'AI Development Guide',
+      'SEO Tips Thailand',
+      'Next.js Tutorial',
+      'React Development',
+      'Python FastAPI Guide'
+    ].join(', '),
+    authors: [{ name: post.author }],
+    creator: post.author,
+    publisher: 'Chaowalit Greepoke',
+    robots: 'index, follow',
+    alternates: {
+      canonical: blogUrl,
+      languages: {
+        'en': `/blog/${slug}`,
+        'th': `/th/blog/${slug}`,
+        'x-default': `/blog/${slug}`
+      }
+    },
+    openGraph: {
+      type: 'article',
+      locale: locale,
+      url: blogUrl,
+      title: baseTitle,
+      description: post.excerpt,
+      siteName: 'Chaowalit Greepoke Portfolio',
+      publishedTime: post.publishedAt,
+      authors: [post.author],
+      tags: post.tags,
+      images: [{
+        url: post.image || '/og-blog-post.jpg',
+        width: 1200,
+        height: 630,
+        alt: `${post.title} - ${post.author}`
+      }]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: baseTitle,
+      description: post.excerpt,
+      creator: '@bookchaowalit',
+      images: [post.image || '/og-blog-post.jpg']
+    },
+    other: {
+      'article:author': post.author,
+      'article:published_time': post.publishedAt,
+      'article:tag': post.tags.join(', ')
+    }
   };
 }
 
