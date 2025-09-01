@@ -1,13 +1,11 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MixedTypographyTitle, NotebookSectionHeader } from "@/components/ui/mixed-typography";
 import { NotebookPaper, SketchyFrame } from "@/components/ui/notebook-elements";
 import { motion } from "framer-motion";
-import { useTranslations } from 'next-intl';
 
 // Business data - you can move this to a separate data file later
 const businesses = [
@@ -48,7 +46,6 @@ const businesses = [
 ];
 
 export function BusinessClient() {
-  const t = useTranslations('business');
 
   return (
     <div className="container mx-auto px-4 py-8">

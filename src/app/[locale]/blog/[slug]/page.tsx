@@ -7,7 +7,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "@/i18n/routing";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getTranslations } from 'next-intl/server';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -40,6 +39,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const blogUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://chaowalitgreepoke.com'}/${locale === 'en' ? '' : locale + '/'}blog/${slug}`;
 
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://chaowalitgreepoke.com'),
     title: baseTitle,
     description: post.excerpt,
     keywords: [
