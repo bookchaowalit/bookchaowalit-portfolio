@@ -32,7 +32,7 @@ export function HeroSection() {
         >
           <Image
             src="/profile.webp"
-            alt="Chaowalit Greepoke - Tech Generalist"
+            alt={t('heroAlt')}
             width={128}
             height={128}
             className="rounded-full object-cover"
@@ -57,11 +57,11 @@ export function HeroSection() {
           <div>
             <MixedTypographyTitle 
               words={[
-                { text: "Tech", style: "block", color: "text-primary", size: "lg" },
-                { text: "Generalist", style: "cursive", color: "text-secondary", size: "lg" },
-                { text: "&", style: "outlined", size: "md" },
-                { text: "Problem", style: "block", color: "text-green-700", size: "lg" },
-                { text: "Solver", style: "shaded", color: "text-accent", size: "lg" }
+                { text: t('heroWord1'), style: "block", color: "text-primary", size: "lg" },
+                { text: t('heroWord2'), style: "cursive", color: "text-secondary", size: "lg" },
+                { text: t('heroWord3'), style: "outlined", size: "md" },
+                { text: t('heroWord4'), style: "block", color: "text-green-700", size: "lg" },
+                { text: t('heroWord5'), style: "shaded", color: "text-accent", size: "lg" }
               ]}
               className="mb-4"
             />
@@ -69,9 +69,7 @@ export function HeroSection() {
           
           <div className="flex justify-center">
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg max-w-md">
-              <p className="text-slate-700 text-center leading-relaxed">
-                <strong>Full-stack Developer</strong> specializing in <strong>Next.js, React, AI integration</strong> and <strong>data analytics</strong> from Bangkok 🇹🇭
-              </p>
+              <p className="text-slate-700 text-center leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw('heroSubtitle') }} />
             </div>
           </div>
           
