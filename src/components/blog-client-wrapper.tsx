@@ -72,8 +72,8 @@ export function BlogNewsletter() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.8 }}
     >
-      <SketchyFrame variant="double" className="py-12 text-center">
-        <div className="bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 rounded-lg p-8">
+      <SketchyFrame variant="double">
+        <NotebookPaper className="p-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export function BlogNewsletter() {
             />
             <Button className="font-[family-name:var(--font-comic)]">Subscribe</Button>
           </motion.div>
-        </div>
+        </NotebookPaper>
       </SketchyFrame>
     </motion.section>
   );

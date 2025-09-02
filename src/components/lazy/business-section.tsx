@@ -6,29 +6,32 @@ import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { MixedTypographyTitle } from "@/components/ui/mixed-typography";
 import { NotebookPaper, SketchyFrame } from "@/components/ui/notebook-elements";
-
-const highlightedBusinesses = [
-  {
-    title: "BookChaowa Tech Solutions",
-    description: "Full-stack development services with AI integration and SEO optimization.",
-    icon: "💻",
-    status: "Active"
-  },
-  {
-    title: "AI Analytics Consulting",
-    description: "Specialized consulting for AI-driven analytics and business intelligence.",
-    icon: "🤖",
-    status: "Active"
-  },
-  {
-    title: "Bangkok Freelance Network",
-    description: "Connecting skilled freelancers with international opportunities.",
-    icon: "🌐",
-    status: "Growing"
-  }
-];
+import { useTranslations } from 'next-intl';
 
 export function BusinessSection() {
+  const t = useTranslations('business');
+  
+  const highlightedBusinesses = [
+    {
+      title: t('bookchaowaTitle'),
+      description: t('bookchaowaDesc'),
+      icon: "💻",
+      status: t('activeStatus')
+    },
+    {
+      title: t('aiConsultingTitle'),
+      description: t('aiConsultingDesc'),
+      icon: "🤖",
+      status: t('activeStatus')
+    },
+    {
+      title: t('networkTitle'),
+      description: t('networkDesc'),
+      icon: "🌐",
+      status: t('growingStatus')
+    }
+  ];
+  
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
