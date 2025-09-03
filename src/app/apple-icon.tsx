@@ -11,19 +11,30 @@ export default function AppleIcon() {
     (
       <div
         style={{
-          fontSize: 72,
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          width: '100%',
-          height: '100%',
+          width: '180px',
+          height: '180px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
-          borderRadius: '20%',
-          fontWeight: 'bold',
+          background: 'transparent',
         }}
       >
-        CG
+        <div
+          style={{
+            fontSize: 72,
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            width: '180px',
+            height: '180px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            borderRadius: '90px',
+            fontWeight: 'bold',
+          }}
+        >
+          CG
+        </div>
       </div>
     ),
     {
