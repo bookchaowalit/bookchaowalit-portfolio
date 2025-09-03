@@ -9,13 +9,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const seoTitles = {
-    en: "About Chaowalit Greepoke - Tech Generalist & Full-Stack Developer from Bangkok",
-    th: "เกี่ยวกับเชาวลิต กรีโภค - Tech Generalist และ Full-Stack Developer จากกรุงเทพฯ"
+    en: "About Chaowalit Greepoke - Tech Generalist & Solopreneur from Bangkok",
+    th: "เกี่ยวกับเชาวลิต กรีโภค - Tech Generalist และ Solopreneur จากกรุงเทพฯ"
   };
 
   const seoDescriptions = {
-    en: "Meet Chaowalit Greepoke, a Tech Generalist with 3+ years experience in full-stack development, AI integration, and SEO optimization. From Bangkok, Thailand, specializing in Next.js, React, Python, and data analytics solutions.",
-    th: "ทำความรู้จักเชาวลิต กรีโภค Tech Generalist ที่มีประสบการณ์ 3+ ปีในด้าน full-stack development, การรวม AI และการเพิ่มประสิทธิภาพ SEO จากกรุงเทพฯ เชี่ยวชาญ Next.js, React, Python และโซลูชันการวิเคราะห์ข้อมูล"
+    en: "Meet Chaowalit Greepoke, a Tech Generalist and Solopreneur who enjoys solving problems and building things end-to-end. From Bangkok, Thailand, working across software engineering, data, AI, and digital growth to create practical and scalable solutions.",
+    th: "ทำความรู้จักเชาวลิต กรีโภค Tech Generalist และ Solopreneur ที่ชอบแก้ปัญหาและสร้างสิ่งต่างๆ แบบครบวงจร จากกรุงเทพฯ ประเทศไทย ทำงานครอบคลุม software engineering, ข้อมูล, AI และการเติบโตดิจิทัล เพื่อสร้างโซลูชันที่ใช้งานได้จริงและขยายตัวได้"
   };
 
   return {
@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: [
       'Chaowalit Greepoke',
       'About Tech Generalist Bangkok',
-      'Full-Stack Developer Experience',
-      'AI Developer Thailand',
-      'React Next.js Specialist',
-      'SEO Optimization Expert',
-      'Python FastAPI Developer',
-      'Bangkok Tech Professional',
-      'Electronics Background Developer'
+      'Solopreneur Thailand', 
+      'Problem Solver Developer',
+      'End-to-end Solutions',
+      'Software Engineering Bangkok',
+      'Data Analytics Bangkok',
+      'AI Integration Thailand',
+      'Digital Growth Specialist'
     ].join(', '),
     robots: 'index, follow',
     alternates: {
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         url: '/og-about.jpg',
         width: 1200,
         height: 630,
-        alt: 'About Chaowalit Greepoke - Tech Generalist from Bangkok'
+        alt: 'About Chaowalit Greepoke - Tech Generalist & Solopreneur from Bangkok'
       }]
     },
     twitter: {

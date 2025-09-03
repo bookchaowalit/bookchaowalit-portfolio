@@ -70,8 +70,46 @@ export default async function LocaleLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Chaowalit Greepoke",
+    "alternateName": "Book",
+    "description": "Tech Generalist and Solopreneur who enjoys solving problems and building things end-to-end",
+    "jobTitle": "Tech Generalist & Solopreneur",
+    "url": "https://chaowalitgreepoke.com",
+    "image": "https://chaowalitgreepoke.com/profile.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bangkok",
+      "addressCountry": "Thailand"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "BookChaowa Tech Solutions"
+    },
+    "knowsAbout": [
+      "Software Engineering",
+      "Data Analytics", 
+      "Artificial Intelligence",
+      "Digital Growth",
+      "Web Development",
+      "Problem Solving"
+    ],
+    "sameAs": [
+      "https://github.com/bookchaowalit",
+      "https://linkedin.com/in/bookchaowalit"
+    ]
+  };
+
   return (
     <html lang={locale}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} ${caveat.variable} ${amaticSC.variable} antialiased`}
       >
