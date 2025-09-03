@@ -10,6 +10,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
+import { GoogleAnalytics } from '@/components/google-analytics';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +47,9 @@ export const metadata: Metadata = {
     icon: '/icon',
     shortcut: '/favicon.ico',
     apple: '/icon',
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };
 
@@ -123,6 +127,9 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <Analytics />
+          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+          )}
         </NextIntlClientProvider>
       </body>
     </html>
