@@ -78,22 +78,21 @@ export function AboutClient() {
             className="mb-6"
           />
           <div className="space-y-6">
-            <StudyGuideBox title="Background" type="note">
+            <StudyGuideBox title="Who I Am" type="note">
               <p className="text-slate-800 leading-relaxed">
-                Hello, I'm <HandDrawnHighlight color="yellow">Book</HandDrawnHighlight>—a Tech Generalist specializing in website development,
-                AI development, and SEO with strong website analysis skills. I have
-                experience working with <HandDrawnHighlight color="green">Shopify, React.js, Next.js</HandDrawnHighlight>, and utilizing tools
-                like <HandDrawnHighlight color="blue">Google Analytics</HandDrawnHighlight> to analyze websites and extract insights that help
-                clients' sites grow and reach a wider audience.
+                Hello, I'm <HandDrawnHighlight color="yellow">Book</HandDrawnHighlight> — a Tech Generalist and Solopreneur who enjoys solving problems and building things end-to-end.
+              </p>
+              <p className="text-slate-800 leading-relaxed mt-4">
+                I work across the spectrum of <HandDrawnHighlight color="green">software engineering, data, AI, and digital growth</HandDrawnHighlight>, connecting different tools and technologies to create solutions that are practical and scalable. My background ranges from developing web platforms to designing data workflows, analyzing information, and applying AI to support smarter decision-making.
               </p>
             </StudyGuideBox>
             
-            <StudyGuideBox title="Expertise" type="tip">
+            <StudyGuideBox title="What I Do" type="tip">
               <p className="text-slate-800 leading-relaxed">
-                Additionally, I have expertise in <HandDrawnHighlight color="pink">analyzing data from various social media
-                platforms</HandDrawnHighlight> to optimize marketing strategies for greater effectiveness. My
-                background in <HandDrawnHighlight color="green">electronics and data center operations</HandDrawnHighlight> has given me a unique
-                perspective on both hardware and software solutions.
+                Beyond development, I focus on <HandDrawnHighlight color="pink">analysis and growth strategies</HandDrawnHighlight> — turning data into insights and insights into action. Whether it's improving websites, optimizing digital marketing, or creating automated systems, I help businesses and individuals reach their goals more effectively.
+              </p>
+              <p className="text-slate-800 leading-relaxed mt-4">
+                As a solopreneur, I wear many hats — <HandDrawnHighlight color="blue">developer, engineer, analyst, and strategist</HandDrawnHighlight> — which allows me to stay flexible and adapt quickly to any challenge.
               </p>
             </StudyGuideBox>
           </div>
